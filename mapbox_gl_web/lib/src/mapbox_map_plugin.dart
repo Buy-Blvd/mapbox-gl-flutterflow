@@ -1,4 +1,4 @@
-part of mapbox_gl_web;
+part of mapbox_gl_flutterflow_web;
 
 class MapboxMapPlugin {
   /// Registers this class as the default instance of [MapboxGlPlatform].
