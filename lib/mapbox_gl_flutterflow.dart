@@ -2,7 +2,7 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-library mapbox_gl;
+library mapbox_gl_flutterflow;
 
 import 'dart:async';
 import 'dart:convert';
@@ -13,9 +13,9 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:mapbox_gl_platform_interface/mapbox_gl_platform_interface.dart';
+import 'package:mapbox_gl_flutterflow_platform_interface/mapbox_gl_flutterflow_platform_interface.dart';
 
-export 'package:mapbox_gl_platform_interface/mapbox_gl_platform_interface.dart'
+export 'package:mapbox_gl_flutterflow_platform_interface/mapbox_gl_flutterflow_platform_interface.dart'
     show
         LatLng,
         LatLngBounds,
