@@ -1,4 +1,4 @@
-part of mapbox_gl_flutter;
+part of mapbox_gl_flutterflow;
 
 extension MapBoxColorConversion on Color {
   String toHexStringRGB() {
