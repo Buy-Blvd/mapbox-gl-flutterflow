@@ -1,8 +1,7 @@
-# Flutter Mapbox GL
+# Mapbox GL Flutterflow
 
 > **Please note that this project is community driven and is not an official Mapbox product.** 
-> 
-> We welcome [feedback](https://github.com/tobrun/flutter-mapbox-gl/issues) and contributions.
+> This project is forked from [flutter-mapbox-gl/maps](https://github.com/flutter-mapbox-gl/maps), which doesn't seem to be supported anymore.  99% of the credit goes to that team.  I'm creating this new repository to implement necessary updates to support building for android on Flutter 3 and to address compatibility issues with FlutterFlow 4.  I'm not an expert, so no promises anything works.  I will make an effort to update the documentation to reflect my changes, but the example project is low priority.
 
 
 ## Table of contents
@@ -24,8 +23,7 @@
   - [Location features](#location-features)
     - [Android](#android)
     - [iOS](#ios)
-  - [Running the example code](#running-the-example-code)
-  - [Contributing](#contributing)
+  - [Running the example code (deprecated)](#running-the-example-code)
 
 ## Introduction
 
@@ -35,12 +33,12 @@ This Flutter plugin allows to show embedded interactive and customizable vector 
 
 ## Setting up
 
-This package is available on [pub.dev](https://pub.dev/packages/mapbox_gl).
+This package is available on [pub.dev](https://pub.dev/packages/mapbox_gl_flutterflow).
 
 Get it by running the following command:
 
 ```
-flutter pub add mapbox_gl
+flutter pub add mapbox_gl_flutterflow
 ```
 
 ### Mobile
@@ -57,7 +55,7 @@ the build process fails with one the following errors *(for Android/iOS respecti
 
 ```
 * What went wrong:
-A problem occurred evaluating project ':mapbox_gl'.
+A problem occurred evaluating project ':mapbox_gl_flutterflow'.
 > SDK Registry token is null. See README.md for more information.
 ```
 
@@ -256,8 +254,7 @@ xml ...
 Since Flutter 3.x.x was introduced, it exposed some race conditions resulting in occasional crashes upon map disposal. The parameter `useDelayedDisposal` was introduced as a workaround for this issue until Flutter and/or Mapbox fix this issue properly. Use with caution - this is not yet production ready since several users still report crashes after using this workaround.
 
 ## Running the example code
+This is not updated to work with this new fork, please disregard.
 See the [documentation about this topic](doc/RUNNING_EXAMPLE_CODE.md)
 
-## Contributing
 
-We welcome contributions to this repository! If you're interested in helping build this Mapbox-Flutter integration, please read [the contribution guide](https://github.com/tobrun/flutter-mapbox-gl/blob/master/CONTRIBUTING.md) to learn how to get started.
