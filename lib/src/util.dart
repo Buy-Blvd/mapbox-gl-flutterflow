@@ -1,4 +1,4 @@
-part of mapbox_gl;
+part of mapbox_gl_flutterflow;
 
 Map<String, dynamic> buildFeatureCollection(
     List<Map<String, dynamic>> features) {
