@@ -1,4 +1,4 @@
-library mapbox_gl_web;
+library mapbox_gl__web;
 
 import 'dart:async';
 import 'dart:convert';
