@@ -1,4 +1,4 @@
-part of mapbox_gl;
+part of mapbox_gl_flutter;
 
 abstract class DownloadRegionStatus {}
 
