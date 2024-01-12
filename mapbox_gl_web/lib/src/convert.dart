@@ -1,4 +1,4 @@
-part of mapbox_gl_web;
+part of mapbox_gl_flutterflow_web;
 
 class Convert {
   static void interpretMapboxMapOptions(
