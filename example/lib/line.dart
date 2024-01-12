@@ -3,7 +3,6 @@
 // found in the LICENSE file.
 
 import 'dart:async';
-import 'dart:typed_data';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -120,10 +119,6 @@ class LineBodyState extends State<LineBody> {
 
   Future<void> _changeAlpha() async {
     double? current = _selectedLine!.options.lineOpacity;
-    if (current == null) {
-      // default value
-      current = 1.0;
-    }
 
     await _updateSelectedLine(
       LineOptions(lineOpacity: current < 0.1 ? 1.0 : current * 0.75),
@@ -132,10 +127,6 @@ class LineBodyState extends State<LineBody> {
 
   Future<void> _toggleVisible() async {
     double? current = _selectedLine!.options.lineOpacity;
-    if (current == null) {
-      // default value
-      current = 1.0;
-    }
     await _updateSelectedLine(
       LineOptions(lineOpacity: current == 0.0 ? 1.0 : 0.0),
     );

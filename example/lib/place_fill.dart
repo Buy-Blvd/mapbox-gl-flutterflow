@@ -3,7 +3,6 @@
 // found in the LICENSE file.
 
 import 'dart:async';
-import 'dart:typed_data';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -130,10 +129,6 @@ class PlaceFillBodyState extends State<PlaceFillBody> {
   void _changePosition() {
     List<List<LatLng>>? geometry = _selectedFill!.options.geometry;
 
-    if (geometry == null) {
-      geometry = _defaultGeometry;
-    }
-
     _updateSelectedFill(FillOptions(
         geometry: geometry
             .map((list) => list
@@ -146,10 +141,6 @@ class PlaceFillBodyState extends State<PlaceFillBody> {
 
   void _changeDraggable() {
     bool? draggable = _selectedFill!.options.draggable;
-    if (draggable == null) {
-      // default value
-      draggable = false;
-    }
     _updateSelectedFill(
       FillOptions(draggable: !draggable),
     );
@@ -157,10 +148,6 @@ class PlaceFillBodyState extends State<PlaceFillBody> {
 
   Future<void> _changeFillOpacity() async {
     double? current = _selectedFill!.options.fillOpacity;
-    if (current == null) {
-      // default value
-      current = 1.0;
-    }
 
     _updateSelectedFill(
       FillOptions(fillOpacity: current < 0.1 ? 1.0 : current * 0.75),
@@ -169,10 +156,6 @@ class PlaceFillBodyState extends State<PlaceFillBody> {
 
   Future<void> _changeFillColor() async {
     String? current = _selectedFill!.options.fillColor;
-    if (current == null) {
-      // default value
-      current = "#FF0000";
-    }
 
     _updateSelectedFill(
       FillOptions(fillColor: "#FFFF00"),
@@ -181,10 +164,6 @@ class PlaceFillBodyState extends State<PlaceFillBody> {
 
   Future<void> _changeFillOutlineColor() async {
     String? current = _selectedFill!.options.fillOutlineColor;
-    if (current == null) {
-      // default value
-      current = "#FF0000";
-    }
 
     _updateSelectedFill(
       FillOptions(fillOutlineColor: "#FFFF00"),
