@@ -1,4 +1,4 @@
-part of mapbox_gl_web;
+part of mapbox_gl_flutterflow_web;
 
 const _mapboxGlCssUrl =
     'https://api.mapbox.com/mapbox-gl-js/v2.7.0/mapbox-gl.css';
