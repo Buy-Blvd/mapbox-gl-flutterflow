@@ -1,6 +1,6 @@
 // ignore_for_file: unnecessary_getters_setters
 
-part of mapbox_gl_platform_interface;
+part of mapbox_gl_flutterflow_platform_interface;
 
 typedef OnPlatformViewCreatedCallback = void Function(int);
 
