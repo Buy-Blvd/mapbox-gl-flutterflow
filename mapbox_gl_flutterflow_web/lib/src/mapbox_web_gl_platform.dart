@@ -34,7 +34,7 @@ class MapboxWebGlPlatform extends MapboxGlPlatform
     _creationParams = creationParams;
     _registerViewFactory(onPlatformViewCreated, this.hashCode);
     return HtmlElementView(
-        viewType: 'plugins.flutter.io/mapbox_gl_${this.hashCode}');
+        viewType: 'plugins.flutter.io/mapbox_gl_flutterflow_${this.hashCode}');
   }
 
   @override
@@ -46,7 +46,7 @@ class MapboxWebGlPlatform extends MapboxGlPlatform
   void _registerViewFactory(Function(int) callback, int identifier) {
     // ignore: undefined_prefixed_name
     ui.platformViewRegistry.registerViewFactory(
-        'plugins.flutter.io/mapbox_gl_$identifier', (int viewId) {
+        'plugins.flutter.io/mapbox_gl_flutterflow_$identifier', (int viewId) {
       _mapElement = DivElement()
         ..style.position = 'absolute'
         ..style.top = '0'

@@ -1,10 +1,10 @@
 
 Pod::Spec.new do |s|
-    s.name             = 'mapbox_gl_web'
+    s.name             = 'mapbox_gl_flutterflow_web'
     s.version          = '0.1.0'
-    s.summary          = 'No-op implementation of mapbox_gl_web web plugin to avoid build issues on iOS'
+    s.summary          = 'No-op implementation of mapbox_gl_flutterflow_web web plugin to avoid build issues on iOS'
     s.description      = <<-DESC
-  temp fake mapbox_gl_web plugin
+  temp fake mapbox_gl_flutterflow_web plugin
                          DESC
     s.homepage         = 'http://example.com'
     s.license          = { :file => '../LICENSE' }

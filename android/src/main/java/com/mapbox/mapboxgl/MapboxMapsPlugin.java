@@ -27,7 +27,7 @@ import io.flutter.plugin.common.PluginRegistry.Registrar;
  */
 public class MapboxMapsPlugin implements FlutterPlugin, ActivityAware {
 
-  private static final String VIEW_TYPE = "plugins.flutter.io/mapbox_gl";
+  private static final String VIEW_TYPE = "plugins.flutter.io/mapbox_gl_flutterflow";
 
   static FlutterAssets flutterAssets;
   private Lifecycle lifecycle;
@@ -43,13 +43,13 @@ public class MapboxMapsPlugin implements FlutterPlugin, ActivityAware {
     flutterAssets = binding.getFlutterAssets();
 
     MethodChannel methodChannel =
-        new MethodChannel(binding.getBinaryMessenger(), "plugins.flutter.io/mapbox_gl");
+        new MethodChannel(binding.getBinaryMessenger(), "plugins.flutter.io/mapbox_gl_flutterflow");
     methodChannel.setMethodCallHandler(new GlobalMethodHandler(binding));
 
     binding
         .getPlatformViewRegistry()
         .registerViewFactory(
-            "plugins.flutter.io/mapbox_gl",
+            "plugins.flutter.io/mapbox_gl_flutterflow",
             new MapboxMapFactory(
                 binding.getBinaryMessenger(),
                 new LifecycleProvider() {
@@ -117,7 +117,7 @@ public class MapboxMapsPlugin implements FlutterPlugin, ActivityAware {
     }
 
     MethodChannel methodChannel =
-        new MethodChannel(registrar.messenger(), "plugins.flutter.io/mapbox_gl");
+        new MethodChannel(registrar.messenger(), "plugins.flutter.io/mapbox_gl_flutterflow");
     methodChannel.setMethodCallHandler(new GlobalMethodHandler(registrar));
   }
 

@@ -17,10 +17,10 @@ dependencies:
   collection: ^1.15.0
 
 # dependency_overrides:
-#   mapbox_gl_platform_interface:
-#     path: ./mapbox_gl_platform_interface
-#   mapbox_gl_web:
-#     path: ./mapbox_gl_web
+#   mapbox_gl_flutterflow_platform_interface:
+#     path: ./mapbox_gl_flutterflow_platform_interface
+#   mapbox_gl_flutterflow_web:
+#     path: ./mapbox_gl_flutterflow_web
 
 flutter:
   plugin:

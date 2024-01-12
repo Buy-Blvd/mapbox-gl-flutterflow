@@ -9,7 +9,7 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:http/http.dart' as http;
-import 'package:mapbox_gl/mapbox_gl.dart';
+import 'package:mapbox_gl_flutterflow/mapbox_gl_flutterflow.dart';
 
 import 'main.dart';
 import 'page.dart';

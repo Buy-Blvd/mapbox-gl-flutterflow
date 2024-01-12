@@ -1,6 +1,6 @@
 import 'package:collection/collection.dart' show IterableExtension;
 import 'package:flutter/material.dart';
-import 'package:mapbox_gl/mapbox_gl.dart';
+import 'package:mapbox_gl_flutterflow/mapbox_gl_flutterflow.dart';
 import 'package:mapbox_gl_example/main.dart';
 
 import 'offline_region_map.dart';

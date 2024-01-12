@@ -146,7 +146,7 @@ class MethodChannelMapboxGl extends MapboxGlPlatform {
               useHybridComposition) as bool;
       if (useHybridCompositionParam) {
         return PlatformViewLink(
-          viewType: 'plugins.flutter.io/mapbox_gl',
+          viewType: 'plugins.flutter.io/mapbox_gl_flutterflow',
           surfaceFactory: (
             BuildContext context,
             PlatformViewController controller,
@@ -162,7 +162,7 @@ class MethodChannelMapboxGl extends MapboxGlPlatform {
             late AndroidViewController controller;
             controller = PlatformViewsService.initAndroidView(
               id: params.id,
-              viewType: 'plugins.flutter.io/mapbox_gl',
+              viewType: 'plugins.flutter.io/mapbox_gl_flutterflow',
               layoutDirection: TextDirection.ltr,
               creationParams: creationParams,
               creationParamsCodec: const StandardMessageCodec(),
@@ -181,7 +181,7 @@ class MethodChannelMapboxGl extends MapboxGlPlatform {
         );
       } else {
         return AndroidView(
-          viewType: 'plugins.flutter.io/mapbox_gl',
+          viewType: 'plugins.flutter.io/mapbox_gl_flutterflow',
           onPlatformViewCreated: onPlatformViewCreated,
           gestureRecognizers: gestureRecognizers,
           creationParams: creationParams,
@@ -190,7 +190,7 @@ class MethodChannelMapboxGl extends MapboxGlPlatform {
       }
     } else if (defaultTargetPlatform == TargetPlatform.iOS) {
       return UiKitView(
-        viewType: 'plugins.flutter.io/mapbox_gl',
+        viewType: 'plugins.flutter.io/mapbox_gl_flutterflow',
         onPlatformViewCreated: onPlatformViewCreated,
         gestureRecognizers: gestureRecognizers,
         creationParams: creationParams,

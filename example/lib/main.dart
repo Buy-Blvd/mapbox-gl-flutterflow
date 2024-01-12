@@ -8,7 +8,7 @@ import 'package:device_info_plus/device_info_plus.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:location/location.dart';
-import 'package:mapbox_gl/mapbox_gl.dart';
+import 'package:mapbox_gl_flutterflow/mapbox_gl_flutterflow.dart';
 
 import 'animate_camera.dart';
 import 'annotation_order_maps.dart';
