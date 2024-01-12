@@ -1,4 +1,4 @@
-part of mapbox_gl_platform_interface;
+part of mapbox_gl_flutterflow_platform_interface;
 
 class MethodChannelMapboxGl extends MapboxGlPlatform {
   late MethodChannel _channel;
