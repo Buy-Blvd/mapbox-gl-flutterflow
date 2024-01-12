@@ -29,7 +29,7 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
 
-  mapbox_gl:
+  mapbox_gl_flutterflow:
     path: ../
 
 # For information on the generic Dart part of this file, see the
