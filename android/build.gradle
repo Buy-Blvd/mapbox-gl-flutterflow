@@ -13,9 +13,9 @@ buildscript {
 }
 
 rootProject.allprojects {
-    def token = System.getenv('SDK_REGISTRY_TOKEN') ?: project.properties['MAPBOX_DOWNLOADS_TOKEN']
-    if (token == null || token.empty) {
-        throw new Exception("SDK Registry token is null. See README.md for more information.")
+    def token = System.getenv('MAPBOX_DOWNLOADS_TOKEN') ?: findProperty('MAPBOX_DOWNLOADS_TOKEN')
+    if (token == null || token.isEmpty()) {
+        throw new Exception("Mapbox Downloads private token not found. See README.md for more information.")
     }
     repositories {
         google()
