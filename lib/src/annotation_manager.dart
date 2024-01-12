@@ -1,4 +1,4 @@
-part of mapbox_gl_flutter;
+part of mapbox_gl_flutterflow;
 
 abstract class AnnotationManager<T extends Annotation> {
   final MapboxMapController controller;
