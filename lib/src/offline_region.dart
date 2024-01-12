@@ -1,4 +1,4 @@
-part of mapbox_gl;
+part of mapbox_gl_flutterflow;
 
 /// Description of region to be downloaded. Identifier will be generated when
 /// the download is initiated.
