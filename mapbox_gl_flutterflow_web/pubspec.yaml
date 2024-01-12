@@ -1,0 +1,36 @@
+name: mapbox_gl_flutterflow_web
+description: Web platform implementation of mapbox_gl
+version: 1.0.0
+homepage: https://github.com/Buy-Blvd/mapbox-gl-flutterflow
+
+flutter:
+  plugin:
+    platforms:
+      web:
+        pluginClass: MapboxMapPlugin
+        fileName: mapbox_gl_web.dart
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_web_plugins:
+    sdk: flutter
+  meta: ^1.1.7
+  mapbox_gl_flutterflow_platform_interface:
+    git:
+      url: https://github.com/Buy-Blvd/mapbox-gl-flutterflow.git
+      path: mapbox_gl_platform_interface
+  mapbox_gl_dart: ^0.2.1
+  image: '>=3.0.0 <5.0.0'
+
+# dependency_overrides:
+#   mapbox_gl_platform_interface:
+#     path: ../mapbox_gl_platform_interface
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+environment:
+  sdk: ">=2.12.0 <4.0.0"
+  flutter: ">=2.0.0"
