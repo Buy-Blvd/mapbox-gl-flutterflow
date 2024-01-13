@@ -183,7 +183,7 @@ class PlaceSymbolBodyState extends State<PlaceSymbolBody> {
 
   void _changeIconOffset() {
     Offset? currentAnchor = _selectedSymbol!.options.iconOffset;
-    final Offset newAnchor = Offset(1.0 - currentAnchor.dy, currentAnchor.dx);
+    final Offset newAnchor = Offset(1.0 - currentAnchor!.dy, currentAnchor.dx);
     _updateSelectedSymbol(SymbolOptions(iconOffset: newAnchor));
   }
 
@@ -203,7 +203,7 @@ class PlaceSymbolBodyState extends State<PlaceSymbolBody> {
     bool? draggable = _selectedSymbol!.options.draggable;
 
     _updateSelectedSymbol(
-      SymbolOptions(draggable: !draggable),
+      SymbolOptions(draggable: !draggable!),
     );
   }
 
@@ -211,14 +211,14 @@ class PlaceSymbolBodyState extends State<PlaceSymbolBody> {
     double? current = _selectedSymbol!.options.iconOpacity;
 
     _updateSelectedSymbol(
-      SymbolOptions(iconOpacity: current < 0.1 ? 1.0 : current * 0.75),
+      SymbolOptions(iconOpacity: current! < 0.1 ? 1.0 : current * 0.75),
     );
   }
 
   Future<void> _changeRotation() async {
     double? current = _selectedSymbol!.options.iconRotate;
     _updateSelectedSymbol(
-      SymbolOptions(iconRotate: current == 330.0 ? 0.0 : current + 30.0),
+      SymbolOptions(iconRotate: current == 330.0 ? 0.0 : current! + 30.0),
     );
   }
 
@@ -233,7 +233,7 @@ class PlaceSymbolBodyState extends State<PlaceSymbolBody> {
   Future<void> _changeZIndex() async {
     int? current = _selectedSymbol!.options.zIndex;
     _updateSelectedSymbol(
-      SymbolOptions(zIndex: current == 12 ? 0 : current + 1),
+      SymbolOptions(zIndex: current == 12 ? 0 : current! + 1),
     );
   }
 

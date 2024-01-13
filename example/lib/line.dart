@@ -121,7 +121,7 @@ class LineBodyState extends State<LineBody> {
     double? current = _selectedLine!.options.lineOpacity;
 
     await _updateSelectedLine(
-      LineOptions(lineOpacity: current < 0.1 ? 1.0 : current * 0.75),
+      LineOptions(lineOpacity: current! < 0.1 ? 1.0 : current * 0.75),
     );
   }
 

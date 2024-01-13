@@ -109,7 +109,7 @@ class PlaceCircleBodyState extends State<PlaceCircleBody> {
     bool? draggable = _selectedCircle!.options.draggable;
     _updateSelectedCircle(
       CircleOptions(
-        draggable: !draggable,
+        draggable: !draggable!,
       ),
     );
   }
@@ -127,7 +127,7 @@ class PlaceCircleBodyState extends State<PlaceCircleBody> {
     double? current = _selectedCircle!.options.circleStrokeOpacity;
 
     _updateSelectedCircle(
-      CircleOptions(circleStrokeOpacity: current < 0.1 ? 1.0 : current * 0.75),
+      CircleOptions(circleStrokeOpacity: current! < 0.1 ? 1.0 : current * 0.75),
     );
   }
 
@@ -150,14 +150,14 @@ class PlaceCircleBodyState extends State<PlaceCircleBody> {
     double? current = _selectedCircle!.options.circleOpacity;
 
     _updateSelectedCircle(
-      CircleOptions(circleOpacity: current < 0.1 ? 1.0 : current * 0.75),
+      CircleOptions(circleOpacity: current! < 0.1 ? 1.0 : current * 0.75),
     );
   }
 
   Future<void> _changeCircleRadius() async {
     double? current = _selectedCircle!.options.circleRadius;
     _updateSelectedCircle(
-      CircleOptions(circleRadius: current == 120.0 ? 30.0 : current + 30.0),
+      CircleOptions(circleRadius: current == 120.0 ? 30.0 : current! + 30.0),
     );
   }
 

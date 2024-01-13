@@ -130,7 +130,7 @@ class PlaceFillBodyState extends State<PlaceFillBody> {
     List<List<LatLng>>? geometry = _selectedFill!.options.geometry;
 
     _updateSelectedFill(FillOptions(
-        geometry: geometry
+        geometry: geometry!
             .map((list) => list
                 .map(
                     // Move to right with 0.1 degree on longitude
@@ -142,7 +142,7 @@ class PlaceFillBodyState extends State<PlaceFillBody> {
   void _changeDraggable() {
     bool? draggable = _selectedFill!.options.draggable;
     _updateSelectedFill(
-      FillOptions(draggable: !draggable),
+      FillOptions(draggable: !draggable!),
     );
   }
 
@@ -150,7 +150,7 @@ class PlaceFillBodyState extends State<PlaceFillBody> {
     double? current = _selectedFill!.options.fillOpacity;
 
     _updateSelectedFill(
-      FillOptions(fillOpacity: current < 0.1 ? 1.0 : current * 0.75),
+      FillOptions(fillOpacity: current! < 0.1 ? 1.0 : current * 0.75),
     );
   }
 
