@@ -1,6 +1,6 @@
 name: mapbox_gl_flutterflow_web
 description: Web platform implementation of mapbox_gl
-version: 1.0.0
+version: 1.0.1
 homepage: https://github.com/Buy-Blvd/mapbox-gl-flutterflow
 
 flutter:

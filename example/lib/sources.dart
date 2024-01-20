@@ -303,14 +303,14 @@ class FullMapState extends State<FullMap> {
       position: CameraPosition(target: LatLng(43, -75), zoom: 6),
     ),
     //video only supported on web
-    if (kIsWeb)
-      StyleInfo(
-        name: "Video",
-        baseStyle: MapboxStyles.SATELLITE,
-        addDetails: addVideo,
-        position: CameraPosition(
-            target: LatLng(37.562984, -122.514426), zoom: 17, bearing: -96),
-      ),
+    // if (kIsWeb)
+    //   StyleInfo(
+    //     name: "Video",
+    //     baseStyle: MapboxStyles.SATELLITE,
+    //     addDetails: addVideo,
+    //     position: CameraPosition(
+    //         target: LatLng(37.562984, -122.514426), zoom: 17, bearing: -96),
+    //   ),
   ];
 
   _onStyleLoadedCallback() async {

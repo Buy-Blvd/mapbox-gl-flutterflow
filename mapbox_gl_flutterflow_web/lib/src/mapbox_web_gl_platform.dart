@@ -949,8 +949,18 @@ class MapboxWebGlPlatform extends MapboxGlPlatform
 
     if (scrollGesturesEnabled) {
       _map.dragPan.enable();
+      _map
+          .getContainer()
+          .querySelector("div.mapboxgl-canvas-container.mapboxgl-interactive")
+          ?.style
+          .cursor = "grab";
     } else {
       _map.dragPan.disable();
+      _map
+          .getContainer()
+          .querySelector("div.mapboxgl-canvas-container.mapboxgl-interactive")
+          ?.style
+          .cursor = "default";
     }
 
     if (zoomGesturesEnabled) {

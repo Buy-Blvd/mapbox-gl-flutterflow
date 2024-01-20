@@ -52,6 +52,8 @@ class _ScrollingMapBodyState extends State<ScrollingMapBody> {
                     height: 300.0,
                     child: MapboxMap(
                       accessToken: MapsDemo.ACCESS_TOKEN,
+                      styleString:
+                          "mapbox://styles/buyblvdryan/clrff17o6004701re2j5thsbf",
                       onMapCreated: onMapCreatedOne,
                       onStyleLoadedCallback: () => onStyleLoaded(controllerOne),
                       initialCameraPosition: CameraPosition(

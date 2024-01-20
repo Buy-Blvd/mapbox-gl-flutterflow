@@ -1,3 +1,10 @@
+## 1.0.3, January 19, 2024
+* Removing all the junk from the publish by adding a .pubignore
+* Updating requirement to mapbox_gl_flutterflow ^1.0.1
+
+## 1.0.0-1.0.2, January 12, 2024
+* Releasing, I have no idea what I changed
+
 ## 0.16.0, May 19, 2022
 * Fix type issues in query rendered features in rect [#862](https://github.com/flutter-mapbox-gl/maps/pull/862)
 * Annotation manager moved to dart [#779](https://github.com/flutter-mapbox-gl/maps/pull/779)

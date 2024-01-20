@@ -1,3 +1,10 @@
+## 1.0.1, January 19, 2024
+* Updated mapbox_web_gl_platform.dart to set cursor to default when click and drag gestures are disabled
+
+## 1.0.0, January 12, 2024
+* Forked from flutter-mapbox-gl
+* Maybe sort of made to work
+
 ## 0.16.0, May 19, 2022
 * Fix type issues in query rendered features in rect [#862](https://github.com/flutter-mapbox-gl/maps/pull/862)
 * Annotation manager moved to dart [#779](https://github.com/flutter-mapbox-gl/maps/pull/779)
