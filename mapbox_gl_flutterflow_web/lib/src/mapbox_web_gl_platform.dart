@@ -904,13 +904,6 @@ class MapboxWebGlPlatform extends MapboxGlPlatform
         .where((entry) => isLayoutProperty(entry.key) && entry.value != null));
     final paint = Map.fromEntries(properties.entries
         .where((entry) => !isLayoutProperty(entry.key) && entry.value != null));
-    if (layerType == "symbol") {
-      debugPrint("Layout:");
-      debugPrint(layout.toString());
-      debugPrint("Paint");
-      debugPrint(paint.toString());
-      debugPrint(jsify(paint).toString());
-    }
     removeLayer(layerId);
 
     _map.addLayer({

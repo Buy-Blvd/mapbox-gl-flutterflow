@@ -1,3 +1,8 @@
+## 1.0.3, January 25, 2024
+* Switched to fetching locale from ui_web to get ride of annoying error
+* Upgraded to GL-js 2.9.0 from 2.7.0
+* Added height: 100% to Mapbox container image to get rid of error
+
 ## 1.0.2, January 19, 2024
 * Added pointerEventsEnabled option to MapboxMap to make the map invisible to pointer signals. This is the only way to make the map transparent to the cursor due to the way mapbox-gl-js and flutter interact.
 
