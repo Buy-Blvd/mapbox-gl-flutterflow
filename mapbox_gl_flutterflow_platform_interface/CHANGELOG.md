@@ -1,3 +1,9 @@
+## 1.0.1, January 19, 2024
+* Added pointerEventsEnabled option to MapboxMap to make the map invisible to pointer signals. This is the only way to make the map transparent to the cursor due to the way mapbox-gl-js and flutter interact.
+
+## 1.0.0, January 12, 2024
+* Literally everything
+
 ## 0.16.0, May 19, 2022
 * Annotation manager moved to dart [#779](https://github.com/flutter-mapbox-gl/maps/pull/779)
 * Fix issue with map disposal on web [#895](https://github.com/flutter-mapbox-gl/maps/pull/895)

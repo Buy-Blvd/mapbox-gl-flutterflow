@@ -11,13 +11,13 @@ abstract class MapboxMapOptionsSink {
 
   void setMinMaxZoomPreference(num? min, num? max);
 
-  void setGestures({
-    required bool rotateGesturesEnabled,
-    required bool scrollGesturesEnabled,
-    required bool tiltGesturesEnabled,
-    required bool zoomGesturesEnabled,
-    required bool doubleClickZoomEnabled,
-  });
+  void setGestures(
+      {required bool rotateGesturesEnabled,
+      required bool scrollGesturesEnabled,
+      required bool tiltGesturesEnabled,
+      required bool zoomGesturesEnabled,
+      required bool doubleClickZoomEnabled,
+      required bool pointerEventsEnabled});
 
   void setTrackCameraPosition(bool trackCameraPosition);
 
@@ -25,7 +25,7 @@ abstract class MapboxMapOptionsSink {
 
   void setMyLocationTrackingMode(int myLocationTrackingMode);
 
-  void setMyLocationRenderMode(int myLocationRenderMode);
+  // void setMyLocationRenderMode(int myLocationRenderMode);
 
   void setLogoViewMargins(int x, int y);
 

@@ -26,6 +26,7 @@ class MapboxMap extends StatefulWidget {
     this.tiltGesturesEnabled = true,
     this.doubleClickZoomEnabled,
     this.dragEnabled = true,
+    this.pointerEventsEnabled = true,
     this.trackCameraPosition = false,
     this.myLocationEnabled = false,
     this.myLocationTrackingMode = MyLocationTrackingMode.None,
@@ -130,6 +131,9 @@ class MapboxMap extends StatefulWidget {
   ///
   /// This takes presedence over zoomGesturesEnabled. Only supported for web.
   final bool? doubleClickZoomEnabled;
+
+  /// True if the map should recieve pointer signals (web only)
+  final bool pointerEventsEnabled;
 
   /// True if you want to be notified of map camera movements by the MapboxMapController. Default is false.
   ///
@@ -262,6 +266,7 @@ class _MapboxMapState extends State<MapboxMap> {
       'onAttributionClickOverride': widget.onAttributionClick != null,
       'dragEnabled': widget.dragEnabled,
       'useHybridCompositionOverride': widget.useHybridCompositionOverride,
+      'styleString': widget.styleString,
     };
     return _mapboxGlPlatform.buildView(
         creationParams, onPlatformViewCreated, widget.gestureRecognizers);
@@ -345,6 +350,7 @@ class _MapboxMapOptions {
     required this.tiltGesturesEnabled,
     required this.zoomGesturesEnabled,
     required this.doubleClickZoomEnabled,
+    required this.pointerEventsEnabled,
     this.trackCameraPosition,
     this.myLocationEnabled,
     this.myLocationTrackingMode,
@@ -369,6 +375,7 @@ class _MapboxMapOptions {
       zoomGesturesEnabled: map.zoomGesturesEnabled,
       doubleClickZoomEnabled:
           map.doubleClickZoomEnabled ?? map.zoomGesturesEnabled,
+      pointerEventsEnabled: map.pointerEventsEnabled,
       myLocationEnabled: map.myLocationEnabled,
       myLocationTrackingMode: map.myLocationTrackingMode,
       myLocationRenderMode: map.myLocationRenderMode,
@@ -398,6 +405,8 @@ class _MapboxMapOptions {
 
   final bool doubleClickZoomEnabled;
 
+  final bool pointerEventsEnabled;
+
   final bool? trackCameraPosition;
 
   final bool? myLocationEnabled;
@@ -421,7 +430,8 @@ class _MapboxMapOptions {
     'scrollGesturesEnabled',
     'tiltGesturesEnabled',
     'zoomGesturesEnabled',
-    'doubleClickZoomEnabled'
+    'doubleClickZoomEnabled',
+    'pointerEventsEnabled',
   };
 
   Map<String, dynamic> toMap() {
@@ -451,6 +461,7 @@ class _MapboxMapOptions {
     addIfNonNull('tiltGesturesEnabled', tiltGesturesEnabled);
     addIfNonNull('zoomGesturesEnabled', zoomGesturesEnabled);
     addIfNonNull('doubleClickZoomEnabled', doubleClickZoomEnabled);
+    addIfNonNull('pointerEventsEnabled', pointerEventsEnabled);
 
     addIfNonNull('trackCameraPosition', trackCameraPosition);
     addIfNonNull('myLocationEnabled', myLocationEnabled);
@@ -483,6 +494,7 @@ class _MapboxMapOptions {
           return listEquals(oldValue, value);
         }
         return oldValue == value;
-      });
+      })
+      ..remove('styleString');
   }
 }

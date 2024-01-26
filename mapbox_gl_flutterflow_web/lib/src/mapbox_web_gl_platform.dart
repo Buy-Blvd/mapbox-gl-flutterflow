@@ -1,7 +1,7 @@
 part of mapbox_gl_flutterflow_web;
 
 const _mapboxGlCssUrl =
-    'https://api.mapbox.com/mapbox-gl-js/v2.7.0/mapbox-gl.css';
+    'https://api.mapbox.com/mapbox-gl-js/v2.9.0/mapbox-gl.css';
 
 class MapboxWebGlPlatform extends MapboxGlPlatform
     implements MapboxMapOptionsSink {
@@ -45,13 +45,14 @@ class MapboxWebGlPlatform extends MapboxGlPlatform
 
   void _registerViewFactory(Function(int) callback, int identifier) {
     // ignore: undefined_prefixed_name
-    ui.platformViewRegistry.registerViewFactory(
+    uiWeb.platformViewRegistry.registerViewFactory(
         'plugins.flutter.io/mapbox_gl_flutterflow_$identifier', (int viewId) {
       _mapElement = DivElement()
         ..style.position = 'absolute'
         ..style.top = '0'
         ..style.bottom = '0'
-        ..style.width = '100%';
+        ..style.width = '100%'
+        ..style.height = '100%';
       callback(viewId);
       return _mapElement;
     });
@@ -67,10 +68,17 @@ class MapboxWebGlPlatform extends MapboxGlPlatform
       if (_creationParams.containsKey('accessToken')) {
         Mapbox.accessToken = _creationParams['accessToken'];
       }
+
+      var _styleString;
+
+      if (_creationParams.containsKey('styleString')) {
+        _styleString = _creationParams['styleString'];
+      }
+
       _map = MapboxMap(
         MapOptions(
           container: _mapElement,
-          style: 'mapbox://styles/mapbox/streets-v11',
+          style: _styleString ?? 'mapbox://styles/mapbox/streets-v11',
           center: LngLat(camera['target'][1], camera['target'][0]),
           zoom: camera['zoom'],
           bearing: camera['bearing'],
@@ -232,7 +240,8 @@ class MapboxWebGlPlatform extends MapboxGlPlatform
 
   @override
   Future<void> matchMapLanguageWithDeviceDefault() async {
-    setMapLanguage(ui.window.locale.languageCode);
+    setMapLanguage(
+        WidgetsBinding.instance.platformDispatcher.locale.languageCode);
   }
 
   @override
@@ -611,10 +620,10 @@ class MapboxWebGlPlatform extends MapboxGlPlatform
     }
   }
 
-  @override
-  void setMyLocationRenderMode(int myLocationRenderMode) {
-    print('myLocationRenderMode not available in web');
-  }
+  // @override
+  // void setMyLocationRenderMode(int myLocationRenderMode) {
+  //   print('myLocationRenderMode not available in web');
+  // }
 
   @override
   void setMyLocationTrackingMode(int myLocationTrackingMode) {
@@ -641,13 +650,14 @@ class MapboxWebGlPlatform extends MapboxGlPlatform
     }
     _interactiveFeatureLayerIds.clear();
 
-    try {
-      final styleJson = jsonDecode(styleString ?? '');
-      final styleJsObject = jsUtil.jsify(styleJson);
-      _map.setStyle(styleJsObject);
-    } catch (_) {
-      _map.setStyle(styleString);
-    }
+    // try {
+    //   final styleJson = jsonDecode(styleString ?? '');
+    //   final styleJsObject = jsUtil.jsify(styleJson);
+    //   _map.setStyle(styleJsObject);
+    // } catch (_) {
+    //   _map.setStyle(styleString, {'diff': false});
+    // }
+    // _map.setStyle(styleString, {'diff': false});
     // catch style loaded for later style changes
     if (_mapReady) {
       _map.once("styledata", _onStyleLoaded);
@@ -890,11 +900,17 @@ class MapboxWebGlPlatform extends MapboxGlPlatform
       double? maxzoom,
       dynamic filter,
       required bool enableInteraction}) async {
-    final layout = Map.fromEntries(
-        properties.entries.where((entry) => isLayoutProperty(entry.key)));
-    final paint = Map.fromEntries(
-        properties.entries.where((entry) => !isLayoutProperty(entry.key)));
-
+    final layout = Map.fromEntries(properties.entries
+        .where((entry) => isLayoutProperty(entry.key) && entry.value != null));
+    final paint = Map.fromEntries(properties.entries
+        .where((entry) => !isLayoutProperty(entry.key) && entry.value != null));
+    if (layerType == "symbol") {
+      debugPrint("Layout:");
+      debugPrint(layout.toString());
+      debugPrint("Paint");
+      debugPrint(paint.toString());
+      debugPrint(jsify(paint).toString());
+    }
     removeLayer(layerId);
 
     _map.addLayer({
@@ -937,7 +953,8 @@ class MapboxWebGlPlatform extends MapboxGlPlatform
       required bool scrollGesturesEnabled,
       required bool tiltGesturesEnabled,
       required bool zoomGesturesEnabled,
-      required bool doubleClickZoomEnabled}) {
+      required bool doubleClickZoomEnabled,
+      required bool pointerEventsEnabled}) {
     if (rotateGesturesEnabled &&
         scrollGesturesEnabled &&
         tiltGesturesEnabled &&
@@ -949,18 +966,8 @@ class MapboxWebGlPlatform extends MapboxGlPlatform
 
     if (scrollGesturesEnabled) {
       _map.dragPan.enable();
-      _map
-          .getContainer()
-          .querySelector("div.mapboxgl-canvas-container.mapboxgl-interactive")
-          ?.style
-          .cursor = "grab";
     } else {
       _map.dragPan.disable();
-      _map
-          .getContainer()
-          .querySelector("div.mapboxgl-canvas-container.mapboxgl-interactive")
-          ?.style
-          .cursor = "default";
     }
 
     if (zoomGesturesEnabled) {
@@ -973,6 +980,20 @@ class MapboxWebGlPlatform extends MapboxGlPlatform
       _map.boxZoom.disable();
       _map.scrollZoom.disable();
       _map.touchZoomRotate.disable();
+    }
+
+    if (pointerEventsEnabled) {
+      _map
+          .getContainer()
+          .querySelector("div.mapboxgl-canvas-container.mapboxgl-interactive")
+          ?.style
+          .pointerEvents = "";
+    } else {
+      _map
+          .getContainer()
+          .querySelector("div.mapboxgl-canvas-container.mapboxgl-interactive")
+          ?.style
+          .pointerEvents = "none";
     }
 
     if (doubleClickZoomEnabled) {

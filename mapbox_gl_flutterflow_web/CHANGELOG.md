@@ -1,3 +1,6 @@
+## 1.0.2, January 19, 2024
+* Added pointerEventsEnabled option to MapboxMap to make the map invisible to pointer signals. This is the only way to make the map transparent to the cursor due to the way mapbox-gl-js and flutter interact.
+
 ## 1.0.1, January 19, 2024
 * Updated mapbox_web_gl_platform.dart to set cursor to default when click and drag gestures are disabled
 

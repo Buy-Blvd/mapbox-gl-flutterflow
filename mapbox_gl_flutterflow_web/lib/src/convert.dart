@@ -30,13 +30,15 @@ class Convert {
         options['scrollGesturesEnabled'] != null &&
         options['tiltGesturesEnabled'] != null &&
         options['zoomGesturesEnabled'] != null &&
-        options['doubleClickZoomEnabled'] != null) {
+        options['doubleClickZoomEnabled'] != null &&
+        options['pointerEventsEnabled'] != null) {
       sink.setGestures(
           rotateGesturesEnabled: options['rotateGesturesEnabled'],
           scrollGesturesEnabled: options['scrollGesturesEnabled'],
           tiltGesturesEnabled: options['tiltGesturesEnabled'],
           zoomGesturesEnabled: options['zoomGesturesEnabled'],
-          doubleClickZoomEnabled: options['doubleClickZoomEnabled']);
+          doubleClickZoomEnabled: options['doubleClickZoomEnabled'],
+          pointerEventsEnabled: options['pointerEventsEnabled']);
     }
 
     if (options.containsKey('trackCameraPosition')) {
@@ -50,9 +52,9 @@ class Convert {
       //Should not be invoked before sink.setMyLocationEnabled()
       sink.setMyLocationTrackingMode(options['myLocationTrackingMode']);
     }
-    if (options.containsKey('myLocationRenderMode')) {
-      sink.setMyLocationRenderMode(options['myLocationRenderMode']);
-    }
+    // if (options.containsKey('myLocationRenderMode')) {
+    //   sink.setMyLocationRenderMode(options['myLocationRenderMode']);
+    // }
     if (options.containsKey('logoViewMargins')) {
       sink.setLogoViewMargins(
           options['logoViewMargins'][0], options['logoViewMargins'][1]);
