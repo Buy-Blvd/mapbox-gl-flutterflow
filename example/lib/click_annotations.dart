@@ -93,9 +93,10 @@ class ClickAnnotationBodyState extends State<ClickAnnotationBody> {
     );
     controller!.addSymbol(
       SymbolOptions(
-          geometry: LatLng(-33.894372606072309, 151.17576679759523),
-          iconImage: "fast-food-15",
-          iconSize: 2),
+        geometry: LatLng(-33.894372606072309, 151.17576679759523),
+        iconImage: "fast-food-15",
+        iconSize: 2,
+      ),
     );
     controller!.addLine(
       LineOptions(

@@ -1,3 +1,7 @@
+## 1.0.5, January 25, 2024
+* Added styleString to Map creationParams to load user-specified style only once on startup
+* Updated minimum required version of mapbox_gl_flutterflow_web to 1.0.3
+
 ## 1.0.4, January 19.2024
 * Added pointerEventsEnabled option to MapboxMap to make the map invisible to pointer signals. This is the only way to make the map transparent to the cursor due to the way mapbox-gl-js and flutter interact.
 

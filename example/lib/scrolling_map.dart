@@ -85,24 +85,34 @@ class _ScrollingMapBodyState extends State<ScrollingMapBody> {
                       Text('It still gets other gestures (e.g scale or tap).'),
                 ),
                 Center(
-                  child: SizedBox(
-                    width: 300.0,
-                    height: 300.0,
-                    child: MapboxMap(
-                      accessToken: MapsDemo.ACCESS_TOKEN,
-                      onMapCreated: onMapCreatedTwo,
-                      onStyleLoadedCallback: () => onStyleLoaded(controllerTwo),
-                      initialCameraPosition: CameraPosition(
-                        target: center,
-                        zoom: 11.0,
-                      ),
-                      gestureRecognizers:
-                          <Factory<OneSequenceGestureRecognizer>>[
-                        Factory<OneSequenceGestureRecognizer>(
-                          () => ScaleGestureRecognizer(),
-                        ),
-                      ].toSet(),
-                    ),
+                  child: Listener(
+                    onPointerSignal: (event) {
+                      GestureBinding.instance.pointerSignalResolver
+                          .register(event, (event) {
+                        return;
+                      });
+                    },
+                    child: SizedBox(
+                        width: 300.0,
+                        height: 300.0,
+                        child: MapboxMap(
+                          accessToken: MapsDemo.ACCESS_TOKEN,
+                          styleString:
+                              "mapbox://styles/buyblvdryan/clrff17o6004701re2j5thsbf",
+                          onMapCreated: onMapCreatedOne,
+                          onStyleLoadedCallback: () =>
+                              onStyleLoaded(controllerOne),
+                          initialCameraPosition: CameraPosition(
+                            target: center,
+                            zoom: 11.0,
+                          ),
+                          gestureRecognizers:
+                              <Factory<OneSequenceGestureRecognizer>>[
+                            Factory<OneSequenceGestureRecognizer>(
+                              () => EagerGestureRecognizer(),
+                            ),
+                          ].toSet(),
+                        )),
                   ),
                 ),
               ],
