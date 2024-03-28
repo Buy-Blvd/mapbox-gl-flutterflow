@@ -1,3 +1,9 @@
+## 1.0.7, March 27, 2024
+* Updated minimum required version of mapbox_gl_flutterflow_web to 1.0.5 (animateCamera fix 2)
+
+## 1.0.6, March 20, 2024
+* Updated minimum required version of mapbox_gl_flutterflow_web to 1.0.4 (animatCamera fix)
+
 ## 1.0.5, January 25, 2024
 * Added styleString to Map creationParams to load user-specified style only once on startup
 * Updated minimum required version of mapbox_gl_flutterflow_web to 1.0.3

@@ -1,3 +1,9 @@
+## 1.0.5, March 27, 2024
+* Fixed another animateCamera issue causing newLatLngBounds to fail
+
+## 1.0.4, March 20, 2024
+* Repaired issue in animateCamera that caused crash in release build
+
 ## 1.0.3, January 25, 2024
 * Switched to fetching locale from ui_web to get ride of annoying error
 * Upgraded to GL-js 2.9.0 from 2.7.0

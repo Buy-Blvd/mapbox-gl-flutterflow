@@ -20,11 +20,13 @@ dependencies:
   device_info_plus: ^3.2.2
   mapbox_gl_flutterflow: ^1.0.5
 
-# dependency_overrides:
-#   mapbox_gl_flutterflow_platform_interface:
-#     path: ../mapbox_gl_flutterflow_platform_interface
-#   mapbox_gl_flutterflow_web:
-#     path: ../mapbox_gl_flutterflow_web
+dependency_overrides:
+  mapbox_gl_flutterflow:
+    path: ../
+  mapbox_gl_flutterflow_platform_interface:
+    path: ../mapbox_gl_flutterflow_platform_interface
+  mapbox_gl_flutterflow_web:
+    path: ../mapbox_gl_flutterflow_web
 
 dev_dependencies:
   flutter_test:

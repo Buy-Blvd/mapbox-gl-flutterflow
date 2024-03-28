@@ -119,7 +119,19 @@ class Convert {
                 'right': right,
               }
             });
-        return camera;
+        LngLat? center = camera.center;
+        num? zoom = camera.zoom;
+        num? bearing = null;
+        num? pitch = null;
+        LngLat? around = null;
+        final newCamera = CameraOptions(
+          around: around,
+          center: center,
+          zoom: zoom,
+          bearing: bearing,
+          pitch: pitch,
+        );
+        return newCamera;
       case 'newLatLngZoom':
         final target = json[1];
         final zoom = json[2];
